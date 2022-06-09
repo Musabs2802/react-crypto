@@ -11,6 +11,7 @@ import {
   Navbar,
 } from './components'
 import './App.css'
+import { DotChartOutlined } from '@ant-design/icons'
 
 const App = () => {
   return (
@@ -34,8 +35,21 @@ const App = () => {
             </Routes>
           </div>
         </Layout>
+        <div className='footer'>
+          <Typography.Paragraph
+            level={1}
+            style={{ color: 'white', textAlign: 'center' }}
+          >
+            Cryptoverse <br /> All rights reserved
+          </Typography.Paragraph>
+          <Space>
+            <Link to='/'>Home</Link>
+            <Link to='/'>Exchanges</Link>
+            <Link to='/'>Cryptocurrencies</Link>
+            <Link to='/'>News</Link>
+          </Space>
+        </div>
       </div>
-      <div className='footer'></div>
     </div>
   )
 }
