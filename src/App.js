@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { Layout, Typography, Space } from 'antd'
-
 import {
   Exchanges,
   HomePage,
@@ -11,7 +10,6 @@ import {
   Navbar,
 } from './components'
 import './App.css'
-import { DotChartOutlined } from '@ant-design/icons'
 
 const App = () => {
   return (

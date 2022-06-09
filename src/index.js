@@ -8,7 +8,7 @@ import store from './app/store'
 import App from './App'
 import 'antd/dist/antd.css'
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <BrowserRouter>
     <Provider store={store}>
