@@ -9,7 +9,7 @@ const { Title } = Typography
 const HomePage = () => {
   const maxCount = 10
 
-  const { data, isFetching } = useGetCryptosQuery(maxCount)
+  const { data, isFetching } = useGetCryptosQuery(20)
   const globalStats = data?.data?.stats
 
   return isFetching ? (
@@ -58,7 +58,7 @@ const HomePage = () => {
           <Link to='/cryptocurrencies'>Show More</Link>
         </Title>
       </div>
-      <Cryptocurrencies coins={data?.data?.coins} simplified />
+      <Cryptocurrencies simplified />
       <div className='home-heading-container'>
         <Title level={3} className='home-title'>
           Latest Crypto News
@@ -67,7 +67,7 @@ const HomePage = () => {
           <Link to='/news'>Show More</Link>
         </Title>
       </div>
-      <News simplified />
+      <News simplified/>
     </>
   )
 }

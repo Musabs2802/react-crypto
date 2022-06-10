@@ -1,9 +1,21 @@
 import millify from 'millify'
 import { Link } from 'react-router-dom'
-import { Card, Row, Col, Input } from 'antd'
+import { Card, Row, Col, Typography } from 'antd'
+import { useGetCryptosQuery } from '../services/cryptoApi'
 
-const Cryptocurrencies = ({ coins, simplified }) => {
-  return (
+const { Title } = Typography
+
+const Cryptocurrencies = ({ simplified }) => {
+  const maxCount = 10
+
+  const { data, isFetching } = useGetCryptosQuery(simplified ? maxCount : null)
+  const coins = data?.data?.coins
+
+  return isFetching ? (
+    <Title level={2} className='header'>
+      Loading...
+    </Title>
+  ) : (
     <>
       <Row gutter={[32, 32]} className='crypto-card-container'>
         {coins.map((c) => (
