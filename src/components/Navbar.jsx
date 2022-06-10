@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Avatar, Button, Typography, Menu } from 'antd'
+import { Avatar, Typography, Menu } from 'antd'
 import icon from '../images/cryptocurrency.png'
 import {
   BulbOutlined,

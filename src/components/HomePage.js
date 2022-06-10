@@ -1,4 +1,4 @@
-import { Col, Row, Statistic, Typography } from 'antd'
+import { Col, Row, Spin, Statistic, Typography } from 'antd'
 import { Link } from 'react-router-dom'
 import { useGetCoinsQuery } from '../services/cryptoApi'
 import millify from 'millify'
@@ -7,9 +7,7 @@ import { Cryptocurrencies, News } from '.'
 const { Title } = Typography
 
 const HomePage = () => {
-  const maxCount = 10
-
-  const { data, isFetching } = useGetCoinsQuery(20)
+  const { data, isFetching } = useGetCoinsQuery(10)
   const globalStats = data?.data?.stats
 
   return isFetching ? (
