@@ -1,7 +1,7 @@
 import millify from 'millify'
 import { Link } from 'react-router-dom'
 import { Card, Row, Col, Typography, Input } from 'antd'
-import { useGetCryptosQuery } from '../services/cryptoApi'
+import { useGetCoinsQuery } from '../services/cryptoApi'
 import { useEffect, useState } from 'react'
 import { MAX_COINS_COUNT } from '../utils/constants'
 
@@ -9,7 +9,7 @@ const { Title } = Typography
 
 const Cryptocurrencies = ({ simplified }) => {
   const maxCount = simplified ? 10 : MAX_COINS_COUNT
-  const { data, isFetching } = useGetCryptosQuery(maxCount)
+  const { data, isFetching } = useGetCoinsQuery(maxCount)
   const [getCoins, setCoins] = useState()
 
   const searchCoin = (search) => {
