@@ -12,7 +12,7 @@ import {
 import { Col, Row, Select, Typography } from 'antd'
 import HTMLReactParser from 'html-react-parser'
 import millify from 'millify'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetCoinQuery } from '../services/cryptoApi'
 import Loader from './Loader'

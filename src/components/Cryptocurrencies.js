@@ -6,8 +6,6 @@ import { useEffect, useState } from 'react'
 import { MAX_COINS_COUNT } from '../utils/constants'
 import Loader from './Loader'
 
-const { Title } = Typography
-
 const Cryptocurrencies = ({ simplified }) => {
   const maxCount = simplified ? 10 : MAX_COINS_COUNT
   const { data, isFetching } = useGetCoinsQuery(maxCount)
