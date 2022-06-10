@@ -4,6 +4,7 @@ import { Card, Row, Col, Typography, Input } from 'antd'
 import { useGetCoinsQuery } from '../services/cryptoApi'
 import { useEffect, useState } from 'react'
 import { MAX_COINS_COUNT } from '../utils/constants'
+import Loader from './Loader'
 
 const { Title } = Typography
 
@@ -25,9 +26,7 @@ const Cryptocurrencies = ({ simplified }) => {
   }, [data])
 
   return isFetching ? (
-    <Title level={2} className='header'>
-      Loading...
-    </Title>
+    <Loader />
   ) : (
     <>
       {!simplified && (

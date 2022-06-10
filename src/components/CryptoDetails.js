@@ -15,6 +15,7 @@ import millify from 'millify'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetCoinQuery } from '../services/cryptoApi'
+import Loader from './Loader'
 
 const { Title, Text } = Typography
 
@@ -91,9 +92,7 @@ const CryptoDetails = () => {
   ]
 
   return isFetching ? (
-    <Title level={2} className='header'>
-      Loading...
-    </Title>
+    <Loader />
   ) : (
     <Col className='coin-detail-container'>
       <Col className='coin-heading-container'>

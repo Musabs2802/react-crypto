@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useGetCoinsQuery } from '../services/cryptoApi'
 import millify from 'millify'
 import { Cryptocurrencies, News } from '.'
+import Loader from './Loader'
 
 const { Title } = Typography
 
@@ -11,9 +12,7 @@ const HomePage = () => {
   const globalStats = data?.data?.stats
 
   return isFetching ? (
-    <Title level={2} className='header'>
-      Loading...
-    </Title>
+    <Loader />
   ) : (
     <>
       <Title level={2} className='header'>
