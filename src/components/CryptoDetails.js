@@ -110,8 +110,8 @@ const CryptoDetails = () => {
         placeholder='Select Time Period'
         onChange={(v) => setTimePeriod(v)}
       >
-        {time.map((t) => (
-          <Select.Option key={t}>{t}</Select.Option>
+        {time.map((t, i) => (
+          <Select.Option key={i}>{t}</Select.Option>
         ))}
       </Select>
 
@@ -123,8 +123,8 @@ const CryptoDetails = () => {
             </Title>
             <p>An overview showing the stats of {coinDetails.name}</p>
           </Col>
-          {stats.map(({ title, value, icon }) => (
-            <Col key={title} className='coin-stats'>
+          {stats.map(({ title, value, icon }, i) => (
+            <Col key={i} className='coin-stats'>
               <Col className='coin-stats-name'>
                 <Text>{icon}</Text>
                 <Text>{title}</Text>
@@ -142,8 +142,8 @@ const CryptoDetails = () => {
             </Title>
             <p>An overview showing the stats of all cryptocurrencies</p>
           </Col>
-          {genericStats.map(({ title, value, icon }) => (
-            <Col key={title} className='coin-stats'>
+          {genericStats.map(({ title, value, icon }, i) => (
+            <Col key={i} className='coin-stats'>
               <Col className='coin-stats-name'>
                 <Text>{icon}</Text>
                 <Text>{title}</Text>
@@ -167,8 +167,8 @@ const CryptoDetails = () => {
           <Title level={3} className='coin-details-heading'>
             {coinDetails.name} Links
           </Title>
-          {coinDetails.links.map((l) => (
-            <Row key={l.name} className='coin-link'>
+          {coinDetails.links.map((l, i) => (
+            <Row key={i} className='coin-link'>
               <Title level={5} className='link-name'>
                 {l.type}
               </Title>
